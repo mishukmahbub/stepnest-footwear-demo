@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="150" viewBox="0 0 620 150" role="img" aria-labelledby="title desc">
+  <title id="title">StepNest Footwear</title>
+  <desc id="desc">Fictional StepNest Footwear logo with a stylized sneaker sole icon.</desc>
+  <rect x="5" y="5" width="140" height="140" rx="34" fill="#17324D"/>
+  <path d="M35 90 C48 88 59 80 66 61 L80 68 C87 79 99 84 117 87 C126 89 131 98 127 106 C124 113 117 116 106 116 L48 116 C38 116 31 109 32 100 C32 96 33 93 35 90 Z" fill="#F7F9FC"/>
+  <path d="M66 61 L80 68 C87 79 99 84 117 87" fill="none" stroke="#16A6A1" stroke-width="7" stroke-linecap="round"/>
+  <path d="M48 99 L112 99 M51 108 L104 108" fill="none" stroke="#16A6A1" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="116" cy="42" r="10" fill="#F4B544"/>
+  <text x="172" y="77" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="800" letter-spacing="-1.4" fill="#17324D">StepNest</text>
+  <text x="176" y="113" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="700" letter-spacing="5" fill="#16A6A1">FOOTWEAR</text>
+</svg>

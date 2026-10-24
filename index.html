@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A fictional StepNest Footwear storefront demo for testing a Chatbase FAQ assistant.">
+  <title>StepNest Footwear — New York Demo Store</title>
+  <style>
+    :root {
+      --navy: #17324D;
+      --teal: #16A6A1;
+      --amber: #F4B544;
+      --page: #F7F9FC;
+      --ink: #17212B;
+      --muted: #5C6B78;
+      --card: #FFFFFF;
+      --line: #E1E8EF;
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--page); color: var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.6; }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin-inline: auto; }
+    header { background: #fff; border-bottom: 1px solid var(--line); }
+    .nav { min-height: 76px; display: flex; gap: 20px; align-items: center; justify-content: space-between; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: var(--navy); font-weight: 800; letter-spacing: -.03em; }
+    .brand img { width: 48px; height: 48px; object-fit: contain; }
+    .navlinks { display: flex; flex-wrap: wrap; gap: 22px; font-size: .95rem; }
+    .navlinks a { text-decoration: none; color: var(--muted); }
+    .hero { padding: 68px 0 54px; background: linear-gradient(135deg, #EDF8F7 0%, #F7F9FC 55%, #FFF5DF 100%); }
+    .hero-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 32px; align-items: center; }
+    .eyebrow { display: inline-block; color: #087E79; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; font-size: .76rem; }
+    h1 { color: var(--navy); font-size: clamp(2.25rem, 6vw, 4.25rem); line-height: 1.04; letter-spacing: -.055em; margin: 12px 0 18px; }
+    .hero p { max-width: 620px; color: var(--muted); font-size: 1.1rem; }
+    .button { display: inline-flex; justify-content: center; align-items: center; min-height: 46px; padding: 0 18px; background: var(--navy); color: white; text-decoration: none; border-radius: 999px; font-weight: 700; margin-top: 10px; }
+    .hero-card { background: #fff; border: 1px solid var(--line); border-radius: 26px; padding: 28px; box-shadow: 0 18px 55px rgba(23,50,77,.08); }
+    .shoe-art { display: grid; place-items: center; background: #E7F7F5; border-radius: 22px; min-height: 200px; font-size: 5rem; }
+    .hero-card h2 { margin: 18px 0 5px; color: var(--navy); }
+    .hero-card p { font-size: .94rem; margin: 0; }
+    section { padding: 54px 0; }
+    .section-title { margin: 0 0 8px; color: var(--navy); font-size: clamp(1.7rem, 4vw, 2.45rem); letter-spacing: -.035em; }
+    .section-copy { margin: 0 0 25px; color: var(--muted); max-width: 700px; }
+    .products { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .product { border: 1px solid var(--line); background: var(--card); border-radius: var(--radius); padding: 19px; }
+    .product-visual { min-height: 110px; display: grid; place-items: center; border-radius: 13px; background: #F1F5F9; font-size: 2.7rem; }
+    .product h3 { color: var(--navy); font-size: 1.02rem; margin: 15px 0 3px; }
+    .sku { color: var(--muted); font-size: .8rem; }
+    .price { margin-top: 8px; color: #087E79; font-weight: 800; }
+    .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .info { background: white; border: 1px solid var(--line); padding: 22px; border-radius: var(--radius); }
+    .info h3 { color: var(--navy); margin-top: 0; }
+    .info p { color: var(--muted); margin-bottom: 0; }
+    .demo-note { border-left: 4px solid var(--amber); background: #FFF8E9; padding: 14px 16px; border-radius: 0 12px 12px 0; color: #665021; font-size: .92rem; }
+    .support-panel { background: var(--navy); color: white; padding: 34px; border-radius: 24px; display: flex; gap: 25px; align-items: center; justify-content: space-between; }
+    .support-panel h2 { margin: 0 0 6px; }
+    .support-panel p { margin: 0; color: #DBE7F1; }
+    .support-panel .button { background: var(--amber); color: var(--navy); flex-shrink: 0; }
+    footer { border-top: 1px solid var(--line); background: #fff; padding: 24px 0; color: var(--muted); font-size: .88rem; }
+    @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } .products { grid-template-columns: repeat(2, 1fr); } .info-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 520px) { .wrap { width: min(100% - 26px, 1120px); } .nav { align-items: flex-start; padding: 13px 0; flex-direction: column; gap: 9px; } .navlinks { gap: 14px; font-size: .88rem; } .hero { padding: 45px 0 35px; } section { padding: 38px 0; } .products { gap: 10px; } .product { padding: 12px; } .support-panel { align-items: flex-start; flex-direction: column; padding: 25px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top"><img src="stepnest-logo.svg" alt="StepNest Footwear logo"><span>StepNest Footwear</span></a>
+      <nav class="navlinks" aria-label="Main navigation">
+        <a href="#products">Products</a><a href="#delivery">Delivery</a><a href="#returns">Returns</a><a href="#support">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Everyday comfort, step by step</span>
+          <h1>Find your next everyday pair.</h1>
+          <p>A fictional New York City shoe store demo. Browse sample shoes and use the chat assistant for product basics, US sizing, shipping, payment, and return questions.</p>
+          <a class="button" href="#products">Explore sample shoes</a>
+        </div>
+        <aside class="hero-card" aria-label="Featured shoe">
+          <div class="shoe-art" aria-hidden="true">👟</div>
+          <h2>StepNest Helper</h2>
+          <p>Need help choosing a size or understanding our demo delivery and return policies? Ask the website assistant.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="wrap">
+        <h2 class="section-title">Sample collection</h2>
+        <p class="section-copy">The products and prices below are fictional practice data. The assistant cannot check real-time stock.</p>
+        <div class="products">
+          <article class="product"><div class="product-visual" aria-hidden="true">👟</div><h3>Everyday Knit Sneaker</h3><div class="sku">SKU SN-C01 · US men’s 7–13 listed</div><div class="price">$58.00</div></article>
+          <article class="product"><div class="product-visual" aria-hidden="true">🏃</div><h3>City Runner</h3><div class="sku">SKU SN-R02 · US men’s 8–13 listed</div><div class="price">$78.00</div></article>
+          <article class="product"><div class="product-visual" aria-hidden="true">🩴</div><h3>Comfort Sandal</h3><div class="sku">SKU SN-S03 · US men’s 7–12 listed</div><div class="price">$32.00</div></article>
+          <article class="product"><div class="product-visual" aria-hidden="true">👞</div><h3>School Classic</h3><div class="sku">SKU SN-K04 · US youth 3–7 listed</div><div class="price">$42.00</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="delivery">
+      <div class="wrap">
+        <h2 class="section-title">Delivery and payments</h2>
+        <p class="section-copy">A summary of the fictional New York City store policies used by the FAQ assistant.</p>
+        <div class="info-grid">
+          <article class="info"><h3>Delivery</h3><p>$5.95 within New York City; $8.95 to other addresses in the contiguous United States. Standard shipping is free on merchandise subtotals of $75.00 or more before shipping and tax. Delivery estimates start after dispatch.</p></article>
+          <article class="info"><h3>Payment</h3><p>Major credit/debit cards through secure checkout, and PayPal if shown at checkout. Prices are before applicable sales tax. Never share card details or verification codes in chat.</p></article>
+          <article class="info"><h3>Size guide</h3><p>Measure your foot from heel to the longest toe in centimetres and compare it with the approximate US men’s size chart in the guide. Fit varies by product; the assistant cannot guarantee a perfect fit.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="returns">
+      <div class="wrap">
+        <h2 class="section-title">Returns and exchanges</h2>
+        <p class="section-copy">For this practice project, return/exchange requests must be raised within 30 calendar days. Shoes must be unworn and unused with the original box, tags, and packaging. Wrong or defective items must be reported within 48 hours with photos. The store reviews every request; the bot cannot approve it.</p>
+        <p class="demo-note"><strong>Demo notice:</strong> StepNest Footwear is fictional. All prices, products and policies on this page are for learning and portfolio practice, not real commercial offers.</p>
+      </div>
+    </section>
+
+    <section id="support">
+      <div class="wrap">
+        <div class="support-panel">
+          <div><h2>Have a question?</h2><p>Ask StepNest Helper about the sample catalog and store policies. This fictional store is based in New York City, New York, USA. For an order-specific issue, a real store would need a human-support channel.</p></div>
+          <a class="button" href="#top">Back to top</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap">© StepNest Footwear — fictional learning demo. No real checkout, inventory, or order-tracking system is connected.</div></footer>
+
+  <!-- CHATBASE EMBED PLACEHOLDER
+       After creating your agent, copy the real website-widget script from Chatbase.
+       Replace this comment with that script. Do not invent or reuse another agent's ID.
+       The page will not show a functioning Chatbase widget until you add the real snippet.
+  -->
+</body>
+</html>
